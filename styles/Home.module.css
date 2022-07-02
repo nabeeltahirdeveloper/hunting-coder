@@ -31,6 +31,7 @@
 .title a {
   color: #0070f3;
   text-decoration: none;
+  padding-left: 15px;
 }
 
 .title a:hover,
@@ -43,6 +44,8 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  display: inherit;
+  
 }
 
 .title,
