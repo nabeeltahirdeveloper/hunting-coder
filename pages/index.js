@@ -1,19 +1,72 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Typewriter from 'typewriter-effect';
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
+import Typewriter from "typewriter-effect";
+import python from "../assets/python.png";
+import javascript from "../assets/javascript.png";
+import react from "../assets/react.png";
+import css from "../assets/css.png";
+import angular from "../assets/angular.png";
+import html from "../assets/html.png";
+import node from "../assets/node.png";
+import mongo from "../assets/mongo.png";
+import firebase from "../assets/firebase.png";
+import { useEffect, useState } from "react";
 
-<Typewriter
-  options={{
-    strings: ['Hello', 'World'],
-    autoStart: true,
-    loop: true,
-  }}
-/>
-
-
+import coffee from "../assets/coffee.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  const [quote, setQuote] = useState(true);
+  let quotes = [
+    "“First, solve the problem. Then, write the code.” – John Johnson",
+    "“Experience is the name everyone gives to their mistakes.” – Oscar Wilde",
+    "“ In order to be irreplaceable, one must always be different” – Coco Chanel",
+    "“Java is to JavaScript what car is to Carpet.” – Chris Heilmann",
+    "“Knowledge is power.” – Francis Bacon",
+    "“Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.” – Dan Salomon",
+    "“Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.” – Antoine de Saint-Exupery",
+    "“Ruby is rubbish! PHP is phpantastic!” – Nikita Popov",
+    "“ Code is like humor. When you have to explain it, it’s bad.” – Cory House",
+    "“Fix the cause, not the symptom.” – Steve Maguire",
+    "“Optimism is an occupational hazard of programming: feedback is the treatment. “ Kent Beck",
+    "“When to use iterative development? You should use iterative development only on projects that you want to succeed.” – Martin Fowler",
+    "“Simplicity is the soul of efficiency.” – Austin Freeman",
+    "“Before software can be reusable it first has to be usable.” – Ralph Johnson",
+    "“Make it work, make it right, make it fast.” – Kent Beck",
+  ];
+  useEffect(() => {
+    AOS.init({
+      // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+      offset: 120, // offset (in px) from the original trigger point
+      delay: 0, // values from 0 to 3000, with step 50ms
+      duration: 400, // values from 0 to 3000, with step 50ms
+      easing: 'ease', // default easing for AOS animations
+      once: false, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+      anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+    });
+    let choose = (choices) => {
+      var index = Math.floor(Math.random() * choices.length);
+      return choices[index];
+    };
+    // let quote = choose(quotes);
+    setQuote(choose(quotes));
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -24,27 +77,84 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          I am <a href="https://github.com/nabeeltahirdeveloper"><Typewriter
-            options={
-              {
-                strings: ['Nabeel Tahir', 'Developer', 'Software Engineer'],
-                autoStart: true,
-                loop: true,
-                speed: 80,
-                delay: 40,
-              }
-            }
-            styles={{
-              display: 'inline-block',
-            }}
-          />
-          </a>
-        </h1>
-
-      
-
-
+        <div className={styles.firstPage}>
+          <h1 className={styles.title}>
+            I am{" "}
+            <a href="https://github.com/nabeeltahirdeveloper">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Nabeel Tahir",
+                    "Software Engineer",
+                    "MERN Developer",
+                    "Full Stack Developer",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  speed: 80,
+                  delay: 40,
+                }}
+              />
+            </a>
+          </h1>
+          <div className={styles.mainBox}>
+            <div className={styles.circularBox}>
+              <div className={styles.mainCircle}>
+                <div className={styles.javascript}>
+                  <Image src={javascript} width={100} height={100} />
+                </div>
+                <div className={styles.css}>
+                  <Image src={css} width={100} height={100} />
+                </div>
+                <div className={styles.react}>
+                  <Image src={react} width={100} height={100} />
+                </div>
+                <div className={styles.angular}>
+                  <Image src={angular} width={100} height={100} />
+                </div>
+                <div className={styles.python}>
+                  <Image src={python} width={100} height={100} />
+                </div>
+                <div className={styles.html}>
+                  <Image src={html} width={100} height={100} />
+                </div>
+                <div className={styles.firebase}>
+                  <Image src={firebase} width={100} height={100} />
+                </div>
+                <div className={styles.mongo}>
+                  <Image src={mongo} width={100} height={100} />
+                </div>
+                <div className={styles.node}>
+                  <Image src={node} width={100} height={100} />
+                </div>
+              </div>
+            </div>
+            <div className={styles.buyCoffee}>
+              <Image
+                src={coffee}
+                alt="coffee"
+                className={styles.coffeeIcon}
+              ></Image>
+              <div className={styles.coffeeText}>
+                <Link href="https://www.buymeacoffee.com/nabeeltahir">
+                  Buy me a coffee
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top-center"
+          bgcolor="#fafafa"
+        >Hello
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -57,5 +167,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }

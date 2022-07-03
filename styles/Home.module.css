@@ -1,15 +1,10 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
+  /* align-items: center; */
 }
 
 .footer {
@@ -45,7 +40,8 @@
   line-height: 1.15;
   font-size: 4rem;
   display: inherit;
-  
+  align-self: flex-start;
+  min-width: 50%;
 }
 
 .title,
@@ -109,6 +105,197 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.mainBox {
+  width: 60%;
+  align-self: flex-end;
+  height: 100vh;
+  display: flex;
+  margin-top: -12%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.circularBox {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  transform: skew(0deg);
+}
+.javascript {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.css {
+  position: absolute;
+  top: -15px;
+  left: 75px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.react {
+  position: absolute;
+  top: 175px;
+  left: 75px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.angular {
+  position: absolute;
+  top: 125px;
+  left: 150px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.python {
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.html {
+  position: absolute;
+  top: 15px;
+  left: 150px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.node {
+  position: absolute;
+  top: 75px;
+  left: 175px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.firebase {
+  position: absolute;
+  top: 125px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.mongo {
+  position: absolute;
+  top: 75px;
+  left: -25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: imageMove;
+  -webkit-animation-duration: 5s;
+}
+.mainCircle {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: orbit;
+  -webkit-animation-duration: 5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -moz-animation-name: orbit;
+  -moz-animation-duration: 5s;
+  top: 50px;
+  left: 50px;
+  display: flex;
+  border-radius: 50%;
+  flex: 7;
+}
+
+.buyCoffee {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  min-width: 190px;
+  height: 40px;
+  transform: skew(0deg);
+  background-color: #e9c256;
+  border-radius: 50px 0px 0px 50px;
+  margin-top: 400px;
+  margin-left: 100px;
+}
+.coffeeIcon {
+  width: 50px;
+  height: 50px;
+  margin-left: -5px;
+}
+.coffeeText {
+}
+.firstPage {
+  background-image: url("../assets/mainBg.png");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 0;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@-webkit-keyframes imageMove {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes orbit {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 600px) {
