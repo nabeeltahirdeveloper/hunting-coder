@@ -57,14 +57,15 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.firstPage}>
           <h1 className={styles.title}>
-            {" "}
+            I am{" "}
             <a href="https://github.com/nabeeltahirdeveloper">
               <Typewriter
                 options={{
                   strings: [
-                    "Acha na sorry",
-                    "chalo theek he pr ab aesa na ho",
-                    "Paka nhi hoga",
+                    "Nabeel Tahir",
+                    "Software Engineer",
+                    "MERN Developer",
+                    "Full Stack Developer",
                   ],
                   autoStart: true,
                   loop: true,
